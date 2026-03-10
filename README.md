@@ -1,4 +1,4 @@
-# Advaced Input Display Module for IKEMEN GO
+# Advanced Input Display Module for IKEMEN GO
 
 This is a module for the IKEMEN GO engine that displays your inputs in training mode
 in a way similar to that of commercial fighting games, displaying both your inputs and
@@ -63,4 +63,5 @@ map(jayinput_enableD)			:= 1;			# Allow detection of D (0 = no, 1 = yes)
 map(jayinput_enableW)			:= 1;			# Allow detection of W (0 = no, 1 = yes)
 map(jayinput_enableS)			:= 1;			# Allow detection of Start (0 = no, 1 = yes)
 ```
+
 You can edit `jayinputdisplay.sff` and `jayinputdisplay.air` directly to further tweak the appearance of the inputs.
