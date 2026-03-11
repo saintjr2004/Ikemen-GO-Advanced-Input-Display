@@ -1,4 +1,4 @@
-# Advanced Input Display Module for IKEMEN GO
+# Advaced Input Display Module for IKEMEN GO
 
 This is a module for the IKEMEN GO engine that displays your inputs in training mode
 in a way similar to that of commercial fighting games, displaying both your inputs and
@@ -25,32 +25,59 @@ Fx      = data/gofx/gofx.def, external/mods/jayinputdisplay/jayinputdisplay.def
 ## Configuration
 
 Within `jayinputdisplay.zss`, you have several configuration options to tweak the display and behavior of the buttons and timer text.
+Because IKEMEN supports both 4:3 and 16:9 resolutions in the same build, there are visual config options for both resolutions, but if you
+are intending to only use one resolution for, say, a fullgame, you can simply ignore the unused resolution options.
 
 ```
-#============
-# CONFIG
-#============
+#===========================================================================
 
-map(jayinput_enabled) 			:= 1;			# Enable input display (0 = off, 1 = on)
+#===============
+# CONFIG (4:3)
+#===============
+
 map(jayinput_xPos)				:= 20;			# X pos for the input display to start on
 map(jayinput_yPos)				:= 85;			# Y pos for the input display to start on
 map(jayinput_rowSpacing) 		:= 12;			# Spacing between input lines
 map(jayinput_columnSpacing) 	:= 12;			# Spacing between input combinations
 map(jayinput_btnScale) 			:= 0.5;			# Scale for buttons
-map(jayinput_btnCount)			:= 11;			# Amount of rows to display (up to 16 items)
-map(jayinput_sprPriority)		:= 512;			# SprPriority parameter value for the buttons
-map(jayinput_onTop)				:= 1;			# Ontop parameter value for the buttons
-map(jayinput_layer)				:= 1;			# Layer parameter value for the buttons
+map(jayinput_btnMirrorConst) 	:= 320;			# Constant used for mirroring on P2 side.
 
-map(jayinput_textEnable)		:= 1;			# Enable timer text (0 = off, 1 = on)
 map(jayinput_textFont) 			:= 3;			# Font used for the timer text (Uses fight.def fonts by default)
 map(jayinput_textBank) 			:= 0;			# Color bank used for the timer text
 map(jayinput_textLayer)			:= 2;			# Layer used for the timer text
 map(jayinput_textXPos)			:= 200;			# X pos for timer text
-map(jayinput_textP2Off)			:= 875;			# X offset for P2 side
 map(jayinput_textYPos)			:= 260;			# Y pos for timer text
 map(jayinput_textSpacing)		:= 36;			# Line spacing for timer text
 map(jayinput_textScale) 		:= 0.75;		# Scale used for the timer text
+map(jayinput_textMirrorConst) 	:= 1275;		# Constant used for mirroring on P2 side.
+
+#===============
+# CONFIG (16:9)
+#===============
+
+map(jayinput_xPos_169)			:= 20;			# X pos for the input display to start on
+map(jayinput_yPos_169)			:= 85;			# Y pos for the input display to start on
+map(jayinput_rowSpacing_169) 	:= 12;			# Spacing between input lines
+map(jayinput_columnSpacing_169) := 12;			# Spacing between input combinations
+map(jayinput_btnScale_169) 		:= 0.5;			# Scale for buttons
+map(jayinput_btnMirrorConst_169):= 320;			# Constant used for mirroring on P2 side.
+
+map(jayinput_textXPos_169)		:= 55;			# X pos for timer text
+map(jayinput_textYPos_169)		:= 344;			# Y pos for timer text
+map(jayinput_textSpacing_169)	:= 48;			# Line spacing for timer text
+map(jayinput_textScale_169) 	:= 1.00;		# Scale used for the timer text
+map(jayinput_textMirrorConst_169):= 1275;		# Constant used for mirroring on P2 side.
+
+#====================
+# CONFIG (BEHAVIOR)
+#====================
+
+map(jayinput_enabled) 			:= 1;			# Enable input display (0 = off, 1 = on)
+map(jayinput_btnCount)			:= 11;			# Amount of rows to display (up to 16 items)
+map(jayinput_sprPriority)		:= 512;			# SprPriority parameter value for the buttons
+map(jayinput_onTop)				:= 1;			# Ontop parameter value for the buttons
+map(jayinput_layer)				:= 1;			# Layer parameter value for the buttons
+map(jayinput_textEnable)		:= 1;			# Enable timer text (0 = off, 1 = on)
 map(jayinput_textCap)			:= 999;			# Max time displayed for a held input
 
 map(jayinput_enableLP)			:= 1;			# Allow detection of LP/X (0 = no, 1 = yes)
@@ -62,6 +89,7 @@ map(jayinput_enableHK)			:= 1;			# Allow detection of HK/C (0 = no, 1 = yes)
 map(jayinput_enableD)			:= 1;			# Allow detection of D (0 = no, 1 = yes)
 map(jayinput_enableW)			:= 1;			# Allow detection of W (0 = no, 1 = yes)
 map(jayinput_enableS)			:= 1;			# Allow detection of Start (0 = no, 1 = yes)
-```
 
+#===========================================================================
+```
 You can edit `jayinputdisplay.sff` and `jayinputdisplay.air` directly to further tweak the appearance of the inputs.
